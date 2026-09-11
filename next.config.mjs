@@ -73,7 +73,12 @@ const legacyRedirects = legacyPairs.map(([source, destination]) => ({
   statusCode: 301,
 }));
 
-const canonicalHost = process.env.CANONICAL_HOST || 'containastore.co.uk';
+// Canonical host is the WWW subdomain — see DISCREPANCIES.md "Canonical host".
+// The bare apex is configured in Vercel's Domains panel to redirect into this
+// host at the edge (before it ever reaches this app), so this in-app redirect
+// is a fallback for any deploy target that doesn't do that redirect itself.
+const canonicalHost = process.env.CANONICAL_HOST || 'www.containastore.co.uk';
+const bareHost = canonicalHost.replace(/^www\./, '');
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -87,10 +92,10 @@ const nextConfig = {
   async redirects() {
     return [
       ...legacyRedirects,
-      // Force the www host onto the bare canonical origin (301).
+      // Force the bare apex host onto the canonical www origin (301).
       {
         source: '/:path*',
-        has: [{ type: 'host', value: `www.${canonicalHost}` }],
+        has: [{ type: 'host', value: bareHost }],
         destination: `https://${canonicalHost}/:path*`,
         statusCode: 301,
       },

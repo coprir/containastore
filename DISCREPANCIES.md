@@ -15,6 +15,20 @@ value below needs the client to confirm before launch.**
 | 6 | Refund terms | The 40ft page and the Contact page say unused **complete weeks** are refunded if you leave early; About and the other size pages do not mention it | **Include the weekly refund, flagged** as "please confirm current terms" — shown on the 40ft page note and the About page | `content/units.ts` → `40ft-storage.notes`, `content/pages.ts` → `aboutCopy.refundNote` |
 | 7 | Facebook | Two different Facebook pages are linked from the live site | `https://www.facebook.com/profile.php?id=61579586157847` | `content/site.ts` → `social.facebook` |
 
+## Canonical host
+
+The build brief said "verify bare and www hosts resolve to one canonical
+origin" without saying which one wins. Originally built with the bare apex
+(`containastore.co.uk`) as canonical. On 11 Sept 2026, while wiring up the real
+domain in Vercel, `www.containastore.co.uk` ended up as the domain actually
+connected to Production (it already had its own DNS target issued before the
+apex was re-added), so the code was switched to match: **`www.containastore.co.uk`
+is now canonical**, and the bare apex redirects into it (301, both at the Vercel
+domain level and as an in-app fallback in `next.config.mjs`). `NEXT_PUBLIC_SITE_URL`
+and `CANONICAL_HOST` reflect this. Flip it back by reversing both if preferred —
+it's an equally reasonable choice either way, just needs to be one thing everywhere
+(canonical tags, sitemap, JSON-LD, and the Vercel domain redirect direction).
+
 ## Other things to confirm (not strict contradictions)
 
 - **Founded 2008** — appears only in a single meta description. **Not displayed
