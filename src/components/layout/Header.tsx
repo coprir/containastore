@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useState } from 'react';
 import type { SiteContent } from '@content/site';
+import { LogoMark } from '@/components/ui/Logo';
 
 const nav = [
   { href: '/storage', label: 'Storage & prices' },
@@ -25,11 +26,14 @@ export function Header({ site }: { site: SiteContent }) {
     <header className="sticky top-0 z-50 border-b border-line bg-ink/95 backdrop-blur">
       <div className="corrugated-strong h-1 w-full opacity-70" aria-hidden="true" />
       <div className="container-x flex items-center justify-between gap-4 py-3">
-        <Link href="/" className="flex flex-col leading-none" aria-label="Containastore home">
-          <span className="font-heading text-lg font-extrabold tracking-tight text-paper">
-            CONTAINASTORE
+        <Link href="/" className="flex items-center gap-2.5" aria-label="Containastore home">
+          <LogoMark className="h-7 w-auto shrink-0" />
+          <span className="flex flex-col leading-none">
+            <span className="font-heading text-lg font-extrabold tracking-tight text-paper">
+              CONTAINASTORE
+            </span>
+            <span className="stencil text-[10px] text-accent">Self Access Storage</span>
           </span>
-          <span className="stencil text-[10px] text-accent">Self Access Storage</span>
         </Link>
 
         <nav aria-label="Primary" className="hidden lg:block">

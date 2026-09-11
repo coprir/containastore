@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Image from 'next/image';
 
 import { pageMeta } from '@/lib/seo';
 import { getSite, aboutCopy } from '@/lib/content';
@@ -37,10 +38,25 @@ export default async function AboutPage() {
           ]}
         />
         <SectionHeading eyebrow="About" title={aboutCopy.heading} />
-        <div className="max-w-2xl space-y-4 text-muted">
-          {aboutCopy.intro.map((para) => (
-            <p key={para}>{para}</p>
-          ))}
+        <div className="grid gap-8 lg:grid-cols-[1.3fr_1fr] lg:items-start">
+          <div className="max-w-2xl space-y-4 text-muted">
+            {aboutCopy.intro.map((para) => (
+              <p key={para}>{para}</p>
+            ))}
+          </div>
+          <figure className="overflow-hidden rounded border border-line">
+            <Image
+              src="/images/container-interior.jpg"
+              alt="Looking out from inside an open, empty Containastore container across the yard"
+              width={300}
+              height={225}
+              className="h-auto w-full object-cover"
+              sizes="(min-width: 1024px) 400px, 100vw"
+            />
+            <figcaption className="border-t border-line bg-panel px-4 py-2 text-xs text-muted">
+              Inside one of our containers, doors open
+            </figcaption>
+          </figure>
         </div>
       </Section>
 

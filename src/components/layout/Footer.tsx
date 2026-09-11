@@ -2,6 +2,7 @@ import Link from 'next/link';
 import type { SiteContent } from '@content/site';
 import { contactEmail } from '@content/site';
 import { Container } from '@/components/ui/Container';
+import { LogoMark } from '@/components/ui/Logo';
 
 export function Footer({ site }: { site: SiteContent }) {
   const email = contactEmail();
@@ -12,7 +13,8 @@ export function Footer({ site }: { site: SiteContent }) {
       <Container>
         <div className="grid gap-10 md:grid-cols-4">
           <div>
-            <p className="font-heading text-base font-extrabold text-paper">
+            <LogoMark className="h-6 w-auto" />
+            <p className="mt-2 font-heading text-base font-extrabold text-paper">
               CONTAINASTORE
             </p>
             <p className="stencil mt-1 text-[10px] text-accent">Self Access Storage</p>

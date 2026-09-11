@@ -62,14 +62,42 @@ it's an equally reasonable choice either way, just needs to be one thing everywh
 
 ## Imagery
 
-There were no usable photographs of the yard or the containers to work from. The
-container graphics on the site are **line illustrations drawn from the design
-system** (`src/components/ui/ContainerFigure.tsx`) — deliberately diagrams, not
-photos, so nothing misrepresents the actual premises. When the client supplies
-real photos of the yard, containers, doors and lockboxes, drop them into
-`public/` and swap the `<ContainerFigure>` usages on the storage pages and
-homepage hero. The social-share image (`src/app/opengraph-image.tsx`) is
-generated from text and the palette for the same reason.
+At launch, no usable photographs of the yard or containers existed, so the
+container graphics were **line illustrations drawn from the design system**
+(`src/components/ui/ContainerFigure.tsx`) — deliberately diagrams, not photos.
+Those are still used on the pricing cards and storage detail pages.
+
+**11 Sept 2026 — real assets recovered.** A copy of the old site's Netcetera
+SiteBuilder Pro project export (`containastore.co.uk_project.sitebuilder`) was
+found locally. It's a proprietary format (a custom header glued onto a real
+zip), so it can't be opened or edited in the normal sense without Netcetera's
+SiteBuilder platform — but the zip payload was extracted directly, exposing the
+project's full content database (`dat/project.db`, SQLite) and its image
+gallery (`gallery/`). Cross-checking that database confirmed the Facebook URL
+above and the email split (both `erica@` and `hello@` genuinely exist in the
+source — `erica@` was in fact the delivery address wired to one of the old
+enquiry forms; worth telling the client in case replies should still reach
+Erica even though `hello@` stays the public-facing address).
+
+Three genuine (non-stock) assets from that gallery are now live on the site,
+copied into `public/images/`:
+- `logo-mark.png` — the real logo, now in the header, footer and 404 page
+  (`src/components/ui/Logo.tsx`)
+- `container-interior.jpg` — a real photo of a container's interior, doors
+  open, on the About page (small source resolution, 300×225 — ask the client
+  for a higher-res version if a larger placement is wanted later)
+- `lock-box.jpg` — the actual welded lock box product, on the Conversions page
+
+Other gallery images were deliberately **not** used — several are visibly stock
+(one file is literally named `danka-peter-...-unsplash...`; another is a
+staged green-container banner with a design gradient, not the client's own
+grey containers) and would misrepresent the business if published as if real.
+An anti-condensation spray-coating-in-progress photo also exists in the
+gallery but was left out and not copied into `public/`, since that service was
+removed from the site (see above) — it's still in the original
+`.sitebuilder` export if spray-related content ever comes back. The
+social-share image (`src/app/opengraph-image.tsx`) is still generated from
+text and the palette rather than a photo.
 
 ## Legal placeholders
 

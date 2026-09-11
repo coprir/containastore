@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Image from 'next/image';
 
 import { pageMeta } from '@/lib/seo';
 import { getSite, conversionServices, conversionCopy } from '@/lib/content';
@@ -80,12 +81,29 @@ export default async function ConversionsPage() {
 
       <Section tone="ink" ariaLabelledby="lockbox-h">
         <SectionHeading id="lockbox-h" eyebrow="Lock boxes" title="Weld-on lock box specification" />
-        <p className="max-w-2xl font-mono text-sm text-paper">{conversionCopy.lockBoxSpec}</p>
-        <p className="mt-3 max-w-2xl text-sm text-muted">
-          Supplied and fitted within a local radius of Redditch. A painted finish
-          (red oxide undercoat, high build gloss top coat) is available. Discount
-          for multiple boxes fitted on the same day.
-        </p>
+        <div className="grid gap-8 lg:grid-cols-[1fr_1.1fr] lg:items-start">
+          <div>
+            <p className="max-w-2xl font-mono text-sm text-paper">{conversionCopy.lockBoxSpec}</p>
+            <p className="mt-3 max-w-2xl text-sm text-muted">
+              Supplied and fitted within a local radius of Redditch. A painted
+              finish (red oxide undercoat, high build gloss top coat) is
+              available. Discount for multiple boxes fitted on the same day.
+            </p>
+          </div>
+          <figure className="overflow-hidden rounded border border-line">
+            <Image
+              src="/images/lock-box.jpg"
+              alt="A freshly welded steel lock box with its hinge bracket, ready to be fitted to a container door"
+              width={1110}
+              height={903}
+              className="h-auto w-full object-cover"
+              sizes="(min-width: 1024px) 480px, 100vw"
+            />
+            <figcaption className="border-t border-line bg-panel px-4 py-2 text-xs text-muted">
+              One of our welded lock boxes, ready to fit
+            </figcaption>
+          </figure>
+        </div>
       </Section>
 
       <Section tone="steel" ariaLabelledby="conv-cta-h">
