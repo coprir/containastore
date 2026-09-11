@@ -1,0 +1,202 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ---- Design tokens: greyscale galvanised steel --------------------------- */
+:root {
+  --ink: #1c1f22; /* page ground */
+  --steel: #23272b; /* alternating bands */
+  --panel: #2a2f34; /* cards */
+  --panel-2: #333940; /* card headers, container-door strips */
+  --line: #3e454c; /* decorative borders */
+  --line-strong: #727c84; /* form fields and buttons — WCAG 1.4.11 needs 3:1 */
+  --paper: #f1f3f4; /* primary text */
+  --muted: #a4acb3; /* secondary text */
+  --accent: #c6d0d8; /* brushed metal — rules, markers, arrows */
+  --accent-strong: #edf1f3; /* primary buttons, dark text on top */
+  --focus: #f0c46a; /* focus ring only */
+  --warn: #e08a7a; /* form errors only */
+
+  --maxw: 1180px;
+  color-scheme: dark;
+}
+
+/* ---- Base -------------------------------------------------------------- */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--ink);
+  color: var(--paper);
+  font-family: var(--font-plex-sans), system-ui, -apple-system, sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-archivo), system-ui, sans-serif;
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  margin: 0;
+}
+
+a {
+  color: inherit;
+}
+
+.font-mono,
+code,
+kbd {
+  font-family: var(--font-plex-mono), ui-monospace, monospace;
+}
+
+/* ---- Focus visibility (design-system: --focus is ring only) ------------- */
+:where(a, button, input, select, textarea, summary, [tabindex]):focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* ---- Skip link -------------------------------------------------------- */
+.skip-link {
+  position: absolute;
+  left: 8px;
+  top: -48px;
+  z-index: 100;
+  background: var(--accent-strong);
+  color: var(--ink);
+  padding: 10px 16px;
+  border-radius: 4px;
+  font-weight: 700;
+  transition: top 0.15s ease;
+}
+.skip-link:focus {
+  top: 8px;
+}
+
+/* ---- Corrugated steel texture --------------------------------------------
+   Used on the hero and on the header strip of each pricing / spec card so a
+   card reads as a shipping-container door. */
+.corrugated {
+  background-image: repeating-linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.045) 0px,
+    rgba(255, 255, 255, 0.045) 2px,
+    rgba(0, 0, 0, 0.16) 6px,
+    rgba(0, 0, 0, 0.16) 22px,
+    rgba(255, 255, 255, 0.045) 26px,
+    rgba(255, 255, 255, 0.045) 28px,
+    transparent 28px,
+    transparent 40px
+  );
+  background-size: 40px 100%;
+}
+
+.corrugated-strong {
+  background-image: repeating-linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.06) 0px,
+    rgba(255, 255, 255, 0.06) 3px,
+    rgba(0, 0, 0, 0.28) 8px,
+    rgba(0, 0, 0, 0.28) 30px,
+    rgba(255, 255, 255, 0.06) 35px,
+    rgba(255, 255, 255, 0.06) 38px,
+    transparent 38px,
+    transparent 52px
+  );
+  background-size: 52px 100%;
+}
+
+/* Stencilled ISO-style size code */
+.stencil {
+  font-family: var(--font-plex-mono), ui-monospace, monospace;
+  letter-spacing: 0.14em;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+/* ---- Hero staggered reveal (the ONE load animation) -------------------- */
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.reveal {
+  animation: rise 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+.reveal-1 { animation-delay: 0.05s; }
+.reveal-2 { animation-delay: 0.16s; }
+.reveal-3 { animation-delay: 0.27s; }
+.reveal-4 { animation-delay: 0.38s; }
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-delay: 0ms !important;
+    transition-duration: 0.001ms !important;
+  }
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* ---- Helpers --------------------------------------------------------- */
+.container-x {
+  width: 100%;
+  max-width: var(--maxw);
+  margin-inline: auto;
+  padding-inline: clamp(1rem, 4vw, 2rem);
+}
+
+.prose-legal p {
+  margin: 0 0 1rem;
+}
+.prose-legal h2 {
+  font-size: 1.25rem;
+  margin: 2rem 0 0.75rem;
+}
+.prose-legal ul {
+  margin: 0 0 1rem;
+  padding-left: 1.25rem;
+}
+.prose-legal li {
+  margin-bottom: 0.5rem;
+}
+
+/* Visibly-unfinished placeholder tokens in legal drafts */
+.placeholder-token {
+  background: rgba(224, 138, 122, 0.16);
+  border: 1px dashed var(--warn);
+  color: var(--paper);
+  padding: 0 4px;
+  border-radius: 4px;
+  font-family: var(--font-plex-mono), ui-monospace, monospace;
+  font-size: 0.85em;
+  overflow-wrap: anywhere;
+}
