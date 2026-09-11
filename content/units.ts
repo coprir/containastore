@@ -1,6 +1,8 @@
 /**
  * Storage units. SOURCE OF TRUTH — see DISCREPANCIES.md for resolved conflicts:
- *  - 20ft price is £115 (homepage card's £120 is not used)
+ *  - 20ft price is £120/month (client-confirmed 11 Sept 2026, superseding the
+ *    original launch-build figure of £115)
+ *  - 40ft price is £180/month (client-confirmed 11 Sept 2026, was £170)
  *  - "From" price across the site is £80 (the cheapest confirmed unit)
  *  - Every container is 8ft 6in high (the FAQ's "8ft high" is not used)
  *
@@ -111,7 +113,7 @@ export const units: StorageUnit[] = [
     slug: '20ft-storage',
     size: '20ft',
     name: '20ft storage unit',
-    pricePerMonth: 115,
+    pricePerMonth: 120,
     floorArea: '160 sq ft',
     doors: 'Double doors',
     code: '20FT · 160 SQ FT',
@@ -142,7 +144,7 @@ export const units: StorageUnit[] = [
     slug: '40ft-storage',
     size: '40ft',
     name: '40ft storage unit',
-    pricePerMonth: 170,
+    pricePerMonth: 180,
     floorArea: '320 sq ft',
     doors: 'Double doors',
     code: '40FT · 320 SQ FT',

@@ -7,13 +7,28 @@ value below needs the client to confirm before launch.**
 
 | # | Item | Conflict on the live site | Decision (build with this) | Where it lives |
 |---|------|---------------------------|----------------------------|----------------|
-| 1 | 20ft price | Homepage card says **£120**; the 20ft page says **£115** | **£115 / month** | `content/units.ts` → `20ft-storage.pricePerMonth` |
+| 1 | 20ft price | Homepage card said **£120**; the 20ft page said **£115** | **RESOLVED 11 Sept 2026 — client confirmed £120 / month** (was built as £115 at launch) | `content/units.ts` → `20ft-storage.pricePerMonth` |
 | 2 | "From" price | Hero says "from **£80**"; meta descriptions say "from **£75**"; cheapest confirmed unit is **£80** | **£80** — derived, not hard-coded: `fromPrice()` returns the lowest `pricePerMonth` across `units` | `content/units.ts` → `fromPrice()`, `src/lib/content.ts` → `getFromPrice()` |
 | 3 | Contact email | `hello@containastore.co.uk` on most pages; `erica@containastore.co.uk` on the FAQ and hints pages | **hello@** — and it is read from the `CONTACT_EMAIL` env var, not committed | `.env.example`, `src/lib/env.ts`, `content/site.ts` → `contactEmail()` |
 | 4 | Size range | Homepage sells **8 / 10 / 12 / 20**; About and Contact say **10 / 20 / 40**; FAQ says **8 / 20 / 40**; meta mentions **30** and **45** | List every size with a **confirmed price** (8, 10, 12, 20, 40) as full cards + detail pages, plus one **"contact us"** card covering **30ft / 45ft high cube** | `content/units.ts` → `units[]` + `enquiryOnlyUnits[]` |
 | 5 | Container height | FAQ says **8ft high**; every other page and all external container dimensions say **8ft 6in** | **8ft 6in** everywhere | `content/units.ts` → `commonSpec.height`, `HEIGHT` |
 | 6 | Refund terms | The 40ft page and the Contact page say unused **complete weeks** are refunded if you leave early; About and the other size pages do not mention it | **Include the weekly refund, flagged** as "please confirm current terms" — shown on the 40ft page note and the About page | `content/units.ts` → `40ft-storage.notes`, `content/pages.ts` → `aboutCopy.refundNote` |
 | 7 | Facebook | Two different Facebook pages are linked from the live site | `https://www.facebook.com/profile.php?id=61579586157847` | `content/site.ts` → `social.facebook` |
+
+## Content changes made since the launch build
+
+- **40ft price** — changed from £170 to **£180 / month**, client-confirmed 11
+  Sept 2026. (Not a source discrepancy — the live site only ever said £170; this
+  is a straightforward price update.) `content/units.ts` → `40ft-storage.pricePerMonth`.
+- **Anti-condensation spray — removed entirely**, client request 11 Sept 2026.
+  It is no longer an offered service anywhere on the site: the `/conversions`
+  page now covers weld-on lock boxes only, the homepage teaser and contact-form
+  size options were updated to match, and all spray copy/prices were deleted
+  from `content/conversions.ts`. The legacy URL `/conversions-condensation*`
+  still 301s to `/conversions` (that redirect exists for old search rankings,
+  independent of what the page now contains). If spray comes back later, the
+  original copy is preserved in this file's git history (see the commit that
+  removed it).
 
 ## Canonical host
 

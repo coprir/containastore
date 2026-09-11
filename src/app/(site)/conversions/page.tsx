@@ -11,9 +11,9 @@ import { breadcrumbSchema } from '@/lib/schema';
 export const revalidate = 300;
 
 export const metadata: Metadata = pageMeta({
-  title: 'Container conversions & anti-condensation spray',
+  title: 'Container conversions & lock boxes',
   description:
-    'Anti-condensation roof spray and weld-on lock boxes for shipping containers, sprayed in situ from a mobile workshop. For container owners and other storage businesses across the West Midlands.',
+    'Weld-on lock boxes for shipping containers, supplied and fitted within a local radius of Redditch. For container owners and other storage businesses across the West Midlands.',
   path: '/conversions',
 });
 
@@ -37,9 +37,9 @@ export default async function ConversionsPage() {
           ]}
         />
         <SectionHeading
-          eyebrow="Conversions & anti-condensation"
-          title="Anti-condensation spray and container conversions"
-          lead="We spray container roofs with an anti-condensation coating and weld on lock boxes — for our own yard and for other storage businesses and container owners. Work is carried out in situ from a mobile workshop."
+          eyebrow="Conversions"
+          title="Container conversions"
+          lead="We weld on lock boxes — for our own yard and for other storage businesses and container owners."
         />
       </Section>
 
@@ -74,30 +74,11 @@ export default async function ConversionsPage() {
           </table>
         </div>
         <div className="mt-6 space-y-2 text-sm text-muted">
-          <p>{conversionCopy.sprayIncludes}</p>
           <p>{conversionCopy.lockBoxDiscount}</p>
         </div>
       </Section>
 
-      <Section tone="ink" ariaLabelledby="about-spray-h">
-        <SectionHeading
-          id="about-spray-h"
-          eyebrow="The coating"
-          title="About the anti-condensation coating"
-        />
-        <ul className="grid gap-3 text-sm text-muted md:grid-cols-2">
-          {conversionCopy.points.map((point) => (
-            <li key={point} className="flex gap-2 rounded border border-line bg-panel p-4">
-              <span aria-hidden="true" className="text-accent">
-                —
-              </span>
-              {point}
-            </li>
-          ))}
-        </ul>
-      </Section>
-
-      <Section tone="steel" ariaLabelledby="lockbox-h">
+      <Section tone="ink" ariaLabelledby="lockbox-h">
         <SectionHeading id="lockbox-h" eyebrow="Lock boxes" title="Weld-on lock box specification" />
         <p className="max-w-2xl font-mono text-sm text-paper">{conversionCopy.lockBoxSpec}</p>
         <p className="mt-3 max-w-2xl text-sm text-muted">
@@ -107,7 +88,7 @@ export default async function ConversionsPage() {
         </p>
       </Section>
 
-      <Section tone="ink" ariaLabelledby="conv-cta-h">
+      <Section tone="steel" ariaLabelledby="conv-cta-h">
         <div className="corrugated rounded border border-line-strong bg-panel-2 p-8 text-center md:p-12">
           <h2 id="conv-cta-h" className="font-heading text-2xl font-extrabold text-paper">
             Get a quote for your containers

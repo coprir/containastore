@@ -42,8 +42,8 @@ export const homeCopy = {
     },
   ],
   conversionsTeaser: {
-    heading: 'Anti-condensation spray and container conversions',
-    body: 'We also spray container roofs with a 1.5mm anti-condensation coating and weld on lock boxes — for our own yard and for other storage businesses and container owners. Sprayed in situ from a mobile workshop.',
+    heading: 'Container conversions',
+    body: 'We also weld on lock boxes — for our own yard and for other storage businesses and container owners.',
   },
   finalCta: {
     heading: 'Ready to talk it through?',

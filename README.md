@@ -12,7 +12,8 @@ launch. The short version:
 
 | Thing | Built with | Needs confirming |
 |---|---|---|
-| 20ft price | £115 / month | live site also says £120 |
+| 20ft price | £120 / month | **confirmed** by client 11 Sept 2026 (was £115 at launch build) |
+| 40ft price | £180 / month | **confirmed** by client 11 Sept 2026 (was £170 at launch build) |
 | "From" price | £80 (lowest confirmed unit) | meta says £75 |
 | Contact email | `hello@` (from `CONTACT_EMAIL`) | FAQ/hints pages say `erica@` |
 | 30ft / 45ft | "Contact us for pricing" card, no page | no price on live site |
@@ -108,7 +109,7 @@ touching a component:
 ```
 content/site.ts         business facts, address, phone, areas, security, socials
 content/units.ts         storage units + dimensions + rental terms + fromPrice()
-content/conversions.ts   anti-condensation spray + lock box prices and copy
+content/conversions.ts   lock box conversion prices and copy
 content/faq.ts           the 8 FAQs
 content/pages.ts         homepage / about / hints-and-tips editorial copy
 content/legal.ts         privacy + cookie policy drafts (with [PLACEHOLDERS])

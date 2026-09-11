@@ -36,7 +36,7 @@ export default async function ContactPage() {
     { value: 'not-sure', label: 'Not sure yet' },
     {
       value: 'conversion',
-      label: 'Conversion or anti-condensation spray',
+      label: 'Conversion / lock box enquiry',
     },
   ];
 
@@ -59,7 +59,7 @@ export default async function ContactPage() {
         <SectionHeading
           eyebrow="Contact"
           title="Get in touch"
-          lead="Tell us roughly what you need to store and we will help you pick the right size, or answer any questions about conversions and anti-condensation spray."
+          lead="Tell us roughly what you need to store and we will help you pick the right size, or answer any questions about conversions and lock boxes."
         />
 
         <div className="grid gap-10 lg:grid-cols-[1.3fr_1fr]">
