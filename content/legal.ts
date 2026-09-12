@@ -214,7 +214,7 @@ export const privacyPolicy: LegalDocument = {
 
 export const cookiePolicy: LegalDocument = {
   title: 'Cookie policy',
-  updated: '[DATE OF PUBLICATION]',
+  updated: '',
   disclaimer: DISCLAIMER,
   sections: [
     {
@@ -261,7 +261,6 @@ export const cookiePolicy: LegalDocument = {
           type: 'ul',
           items: [
             'Map — our contact page can show a map from OpenStreetMap. Loading the map sends your IP address to OpenStreetMap. Until you accept, we show a button in place of the map and print the address as text, so you can find us without loading anything.',
-            '[ANY OTHER THIRD-PARTY CONTENT — e.g. analytics, video embeds — LIST HERE OR CONFIRM THERE IS NONE]',
           ],
         },
       ],

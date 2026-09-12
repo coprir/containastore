@@ -24,11 +24,11 @@ export function LegalDocument({
 }) {
   return (
     <article className="prose-legal max-w-3xl text-muted">
-      <p className="text-sm">
-        Last updated: {renderWithPlaceholders(doc.updated)}
-      </p>
+      {doc.updated ? (
+        <p className="text-sm">Last updated: {renderWithPlaceholders(doc.updated)}</p>
+      ) : null}
 
-      <p className="mt-4 rounded border border-dashed border-warn bg-panel p-4 text-sm">
+      <p className={`rounded border border-dashed border-warn bg-panel p-4 text-sm ${doc.updated ? 'mt-4' : ''}`}>
         <strong className="text-paper">Draft — not legal advice.</strong> {doc.disclaimer}
       </p>
 
