@@ -181,7 +181,10 @@ pages are static (ISR, 5-minute revalidate).
 ## Pre-launch checklist
 
 - [ ] Every row in `DISCREPANCIES.md` confirmed by the client
-- [ ] Privacy + cookie `[PLACEHOLDERS]` filled in and both policies legally reviewed
+- [ ] **Privacy policy decision** — currently removed from the site (12 Sept
+      2026, client request); see `DISCREPANCIES.md` for the compliance risk
+      this creates. Resolve before the enquiry form collects real customer data.
+- [ ] Cookie policy `[PLACEHOLDERS]` filled in and legally reviewed
 - [ ] `FORM_ENDPOINT` + `FORM_RECIPIENT_EMAIL` set and a test enquiry received
 - [ ] `CONTACT_EMAIL` verified (`hello@` vs `erica@`)
 - [ ] All env vars set in the host

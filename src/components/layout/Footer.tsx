@@ -36,7 +36,6 @@ export function Footer({ site }: { site: SiteContent }) {
           <nav aria-label="Footer — legal">
             <p className="mb-2 font-semibold text-paper">Legal</p>
             <ul className="space-y-1 text-muted">
-              <li><Link href="/privacy" className="hover:text-paper">Privacy policy</Link></li>
               <li><Link href="/cookies" className="hover:text-paper">Cookie policy</Link></li>
             </ul>
           </nav>

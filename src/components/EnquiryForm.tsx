@@ -269,13 +269,9 @@ export function EnquiryForm({
       </div>
 
       <p className="text-xs text-muted">
-        Our replies occasionally land in spam or junk folders — please check there
-        if you do not hear back. By sending this you agree to us using your
-        details to answer your enquiry, as set out in our{' '}
-        <a href="/privacy" className="underline hover:text-paper">
-          privacy policy
-        </a>
-        .
+        Our replies occasionally land in spam or junk folders — please check
+        there if you do not hear back. By sending this you agree to us using
+        your details to answer your enquiry.
       </p>
 
       <button

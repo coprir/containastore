@@ -99,6 +99,26 @@ removed from the site (see above) — it's still in the original
 social-share image (`src/app/opengraph-image.tsx`) is still generated from
 text and the palette rather than a photo.
 
+## ⚠️ Privacy policy removed — legal risk, needs a decision
+
+**12 Sept 2026, client request.** The `/privacy` page, its footer link, and the
+enquiry form's reference to it were removed from the site. The draft content
+itself is untouched in `content/legal.ts` (`privacyPolicy` export) so it can be
+restored in minutes if needed — it's just no longer routed or linked anywhere.
+
+**This is flagged, not just logged, because it's a real compliance gap, not a
+cosmetic one.** The site collects personal data via the enquiry form and the
+copy elsewhere on the site describes CCTV monitoring of the yard. Under UK
+GDPR and PECR, a business processing personal data is required to make a
+privacy notice available to the people whose data it collects, regardless of
+whether the page is linked from the site. Taking the page down doesn't remove
+that obligation — it just stops disclosing it. If this is meant to be
+temporary (e.g. swapping in a different/shorter policy, or publishing it
+somewhere else such as a printed notice on site), restore the route once
+that's ready. If it's meant to stay off, the client should get sign-off from
+whoever handles their compliance before this goes live for real, ideally
+before customer data is collected via the (still-live) enquiry form.
+
 ## Legal placeholders
 
 The privacy and cookie policy drafts contain `[SQUARE BRACKET]` tokens for every
