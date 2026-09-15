@@ -1,7 +1,6 @@
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { SkipLink } from '@/components/layout/SkipLink';
-import { CookieConsent } from '@/components/CookieConsent';
 import { getSite } from '@/lib/content';
 import { localBusinessSchema } from '@/lib/schema';
 
@@ -24,7 +23,6 @@ export default async function SiteLayout({
       <Header site={site} />
       <main id="main">{children}</main>
       <Footer site={site} />
-      <CookieConsent />
     </>
   );
 }

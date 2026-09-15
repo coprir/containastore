@@ -47,13 +47,13 @@ export function Hero({
           />
         </div>
 
-        <div className="reveal reveal-4 mt-12 hidden sm:block" aria-hidden="true">
+        <div className="reveal reveal-4 mt-12" aria-hidden="true">
           <ContainerFigure
             ratio={5}
             doors="double"
             code="40FT · 320 SQ FT"
             label="Illustration of a 40ft shipping container"
-            className="h-28 w-full opacity-90 md:h-36"
+            className="h-20 w-full opacity-90 sm:h-28 md:h-36"
           />
         </div>
       </Container>

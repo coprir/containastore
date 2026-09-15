@@ -98,6 +98,16 @@ export default async function StoragePage() {
             <div>
               <dt className="font-heading font-bold text-paper">Ongoing payments</dt>
               <dd className="mt-1 text-sm text-muted">{rentalTerms.ongoingPayment}</dd>
+              <div className="mt-3 flex items-center gap-3">
+                <Image
+                  src="/images/card-payments.jpg"
+                  alt=""
+                  width={490}
+                  height={494}
+                  className="h-12 w-12 rounded object-cover"
+                />
+                <span className="text-xs text-muted">We accept card payments</span>
+              </div>
             </div>
           </dl>
         </div>

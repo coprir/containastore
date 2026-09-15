@@ -25,14 +25,18 @@ export function Header({ site }: { site: SiteContent }) {
   return (
     <header className="sticky top-0 z-50 border-b border-line bg-ink/95 backdrop-blur">
       <div className="corrugated-strong h-1 w-full opacity-70" aria-hidden="true" />
-      <div className="container-x flex items-center justify-between gap-4 py-3">
-        <Link href="/" className="flex items-center gap-2.5" aria-label="Containastore home">
-          <LogoMark className="h-7 w-auto shrink-0" />
-          <span className="flex flex-col leading-none">
-            <span className="font-heading text-lg font-extrabold tracking-tight text-paper">
+      <div className="container-x flex items-center justify-between gap-2 py-3 sm:gap-4">
+        <Link
+          href="/"
+          className="flex min-w-0 items-center gap-1.5 sm:gap-2.5"
+          aria-label="Containastore home"
+        >
+          <LogoMark className="h-6 w-auto shrink-0 sm:h-7" />
+          <span className="flex min-w-0 flex-col leading-none lg:min-w-fit lg:shrink-0">
+            <span className="truncate font-heading text-sm font-extrabold tracking-tighter text-paper sm:text-lg sm:tracking-tight">
               CONTAINASTORE
             </span>
-            <span className="stencil text-[10px] text-accent">Self Access Storage</span>
+            <span className="stencil truncate text-[10px] text-accent">Self Access Storage</span>
           </span>
         </Link>
 
@@ -43,7 +47,7 @@ export function Header({ site }: { site: SiteContent }) {
                 <Link
                   href={item.href}
                   aria-current={isActive(item.href) ? 'page' : undefined}
-                  className={`rounded px-3 py-2 text-sm transition-colors hover:bg-panel-2 ${
+                  className={`rounded px-2 py-2 text-sm transition-colors hover:bg-panel-2 xl:px-3 ${
                     isActive(item.href) ? 'text-paper underline underline-offset-4' : 'text-muted'
                   }`}
                 >
@@ -71,7 +75,7 @@ export function Header({ site }: { site: SiteContent }) {
 
         <button
           type="button"
-          className="rounded border border-line-strong px-3 py-2 text-sm lg:hidden"
+          className="shrink-0 rounded border border-line-strong px-2.5 py-2 text-sm sm:px-3 lg:hidden"
           aria-expanded={open}
           aria-controls="mobile-nav"
           onClick={() => setOpen((v) => !v)}

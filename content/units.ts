@@ -202,9 +202,9 @@ export const rentalTerms = {
   lock:
     'A heavy duty lock is provided free against a £30 deposit, refunded when the lock is returned and the container is empty. You are welcome to add your own padlocks.',
   firstPayment:
-    'The first payment is made on move-in day by cash or pre-arranged bank transfer.',
+    'The first payment is made on move-in day by cash, card or pre-arranged bank transfer.',
   ongoingPayment:
-    'Ongoing payments can be made by cash, bank transfer or standing order. We do not take card payments yet, though we plan to in future.',
+    'Ongoing payments can be made by cash, card, bank transfer or standing order.',
 };
 
 /** The single "from" price used in hero copy, meta and schema. */

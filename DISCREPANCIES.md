@@ -103,16 +103,17 @@ green/blue/grey) per explicit client instruction. `public/images/logo.jpg`,
 `src/components/ui/Logo.tsx`.
 
 **15 Sept 2026 — real client photos added via WhatsApp.** The client sent 8
-photos directly. One (`We accept card payments` badge) was **not used** — it
-directly contradicts the confirmed rental terms ("we do not take card
-payments yet, though we plan to in future"); publishing it would tell real
-customers something false about how they can pay. If the client has actually
-started taking cards, that's a rental-terms update (`content/units.ts` →
-`rentalTerms`), not just an image swap — flag it so both get changed together.
-The other 7 were reviewed for authenticity before use (a couple initially read
-as stock photography — blank/characterless number plate on the car shot,
-professional product-style lighting photo — but the client confirmed these are
-genuinely theirs). Five are now live:
+photos directly. One (`We accept card payments` badge) was initially **not
+used** — it contradicted the rental terms as they stood at the time ("we do
+not take card payments yet"). Client confirmed the same day that card
+payments are now genuinely accepted, so **both were updated together**:
+`content/units.ts` → `rentalTerms.firstPayment`/`ongoingPayment` now list card
+alongside cash/bank transfer/standing order, and `card-payments.jpg` is live
+next to "Ongoing payments" on `/storage`. The other 7 photos were reviewed for
+authenticity before use (a couple initially read as stock photography — a
+blank/characterless number plate on the car shot, a professional
+product-style lighting photo — but the client confirmed these are genuinely
+theirs). Five are now live:
 - `container-yard.jpg` — a row of containers, top of `/storage`
 - `drive-up-access.jpg` — a car parked beside a container, illustrating the
   "Drive-up access" point on `/about`
@@ -150,3 +151,22 @@ The privacy and cookie policy drafts contain `[SQUARE BRACKET]` tokens for every
 fact only the client can supply (legal entity, ICO number, retention periods,
 processor names, publication date). They render in a dashed red box on the page
 so they cannot be missed. See `content/legal.ts`.
+
+## Cookie consent banner removed
+
+**15 Sept 2026, client request.** The fixed bottom "Cookies on this site"
+banner (`src/components/CookieConsent.tsx`) is no longer rendered — removed
+from `src/app/(site)/layout.tsx` because the destination (Netcetera
+SiteBuilder) provides its own cookie consent widget once imported there, and
+two banners would be redundant. The component file itself is left in place,
+just unused, in case it's wanted again before the Netcetera move.
+
+This does **not** reopen the compliance gap the way the privacy policy removal
+does: the contact page's OpenStreetMap embed (the only non-essential
+third-party content on the site) still only loads after an explicit click on
+its own "Accept" / "Load once" buttons (`src/components/MapConsent.tsx`), and
+`/cookies` still has its own "accept/decline" control
+(`src/components/CookieSettings.tsx`) — visitors are just no longer
+proactively prompted with a banner on every page. Whatever cookie mechanism
+Netcetera's own builder provides after import should take over that
+proactive-prompt role.
