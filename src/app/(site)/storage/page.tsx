@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import Image from 'next/image';
 
 import { pageMeta } from '@/lib/seo';
 import {
@@ -53,6 +54,22 @@ export default async function StoragePage() {
           title="Container storage sizes and prices"
           lead={`Every container is 8ft wide and 8ft 6in high, ventilated, and fitted with a welded steel lockbox. Prices are per calendar month, from £${from}.`}
         />
+
+        <figure className="mb-8 overflow-hidden rounded border border-line">
+          <Image
+            src="/images/container-yard.jpg"
+            alt="A row of Containastore storage containers"
+            width={1536}
+            height={1024}
+            priority
+            className="h-[220px] w-full object-cover md:h-[320px]"
+            sizes="100vw"
+          />
+          <figcaption className="border-t border-line bg-panel px-4 py-2 text-xs text-muted">
+            Our containers, ready to rent
+          </figcaption>
+        </figure>
+
         <PricingGrid units={units} enquiryOnly={enquiryOnlyUnits} />
       </Section>
 

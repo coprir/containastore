@@ -47,10 +47,10 @@ export default async function AboutPage() {
           <figure className="overflow-hidden rounded border border-line">
             <Image
               src="/images/container-interior.jpg"
-              alt="Looking out from inside an open, empty Containastore container across the yard"
-              width={300}
-              height={225}
-              className="h-auto w-full object-cover"
+              alt="Looking down the inside of an empty Containastore container, doors open onto the yard"
+              width={1200}
+              height={1600}
+              className="h-auto max-h-[480px] w-full object-cover"
               sizes="(min-width: 1024px) 400px, 100vw"
             />
             <figcaption className="border-t border-line bg-panel px-4 py-2 text-xs text-muted">
@@ -70,6 +70,21 @@ export default async function AboutPage() {
             </div>
           ))}
         </div>
+
+        <figure className="mt-6 overflow-hidden rounded border border-line">
+          <Image
+            src="/images/drive-up-access.jpg"
+            alt="A car parked directly alongside a row of Containastore containers"
+            width={1086}
+            height={1448}
+            className="h-[280px] w-full object-cover object-[center_35%] md:h-[340px]"
+            sizes="100vw"
+          />
+          <figcaption className="border-t border-line bg-panel px-4 py-2 text-xs text-muted">
+            Drive-up access — park right next to your container, no long walk from a car park
+          </figcaption>
+        </figure>
+
         <p className="mt-8 max-w-2xl text-sm text-muted">
           <strong className="text-paper">Early departures.</strong> {aboutCopy.refundNote}
         </p>
@@ -84,6 +99,35 @@ export default async function AboutPage() {
             </li>
           ))}
         </ul>
+
+        <div className="mt-6 grid gap-6 sm:grid-cols-2">
+          <figure className="overflow-hidden rounded border border-line">
+            <Image
+              src="/images/security-lighting.jpg"
+              alt="Security lighting mounted on the yard"
+              width={800}
+              height={534}
+              className="h-48 w-full object-cover"
+              sizes="(min-width: 640px) 50vw, 100vw"
+            />
+            <figcaption className="border-t border-line bg-panel px-4 py-2 text-xs text-muted">
+              Security lighting over the yard
+            </figcaption>
+          </figure>
+          <figure className="overflow-hidden rounded border border-line">
+            <Image
+              src="/images/lock-box-painted.jpg"
+              alt="A welded steel lockbox fitted to a container door"
+              width={1448}
+              height={1086}
+              className="h-48 w-full object-cover"
+              sizes="(min-width: 640px) 50vw, 100vw"
+            />
+            <figcaption className="border-t border-line bg-panel px-4 py-2 text-xs text-muted">
+              A heavy duty lockbox, welded to every container door
+            </figcaption>
+          </figure>
+        </div>
       </Section>
 
       <Section tone="steel" ariaLabelledby="find-h">

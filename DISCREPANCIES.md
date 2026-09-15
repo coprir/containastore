@@ -79,13 +79,11 @@ source — `erica@` was in fact the delivery address wired to one of the old
 enquiry forms; worth telling the client in case replies should still reach
 Erica even though `hello@` stays the public-facing address).
 
-Three genuine (non-stock) assets from that gallery are now live on the site,
+Three genuine (non-stock) assets from that gallery went live on the site,
 copied into `public/images/`:
-- `logo-mark.png` — the real logo, now in the header, footer and 404 page
-  (`src/components/ui/Logo.tsx`)
+- the real logo (originally `logo-mark.png`) — see below, since replaced
 - `container-interior.jpg` — a real photo of a container's interior, doors
-  open, on the About page (small source resolution, 300×225 — ask the client
-  for a higher-res version if a larger placement is wanted later)
+  open (small source resolution, 300×225) — since replaced, see below
 - `lock-box.jpg` — the actual welded lock box product, on the Conversions page
 
 Other gallery images were deliberately **not** used — several are visibly stock
@@ -98,6 +96,33 @@ removed from the site (see above) — it's still in the original
 `.sitebuilder` export if spray-related content ever comes back. The
 social-share image (`src/app/opengraph-image.tsx`) is still generated from
 text and the palette rather than a photo.
+
+**12 Sept 2026 — logo replaced, client request.** The recovered logo mark was
+swapped for a different graphic (three containers of increasing length,
+green/blue/grey) per explicit client instruction. `public/images/logo.jpg`,
+`src/components/ui/Logo.tsx`.
+
+**15 Sept 2026 — real client photos added via WhatsApp.** The client sent 8
+photos directly. One (`We accept card payments` badge) was **not used** — it
+directly contradicts the confirmed rental terms ("we do not take card
+payments yet, though we plan to in future"); publishing it would tell real
+customers something false about how they can pay. If the client has actually
+started taking cards, that's a rental-terms update (`content/units.ts` →
+`rentalTerms`), not just an image swap — flag it so both get changed together.
+The other 7 were reviewed for authenticity before use (a couple initially read
+as stock photography — blank/characterless number plate on the car shot,
+professional product-style lighting photo — but the client confirmed these are
+genuinely theirs). Five are now live:
+- `container-yard.jpg` — a row of containers, top of `/storage`
+- `drive-up-access.jpg` — a car parked beside a container, illustrating the
+  "Drive-up access" point on `/about`
+- `container-interior.jpg` — **replaces** the smaller SiteBuilder-era photo,
+  same slot on `/about`
+- `security-lighting.jpg`, `lock-box-painted.jpg` — both on `/about`'s
+  security section, alongside the existing four security bullet points
+Two more (a second container-row angle, a second interior "wood floor" shot)
+were sent but not placed anywhere yet — available in
+`C:\Users\user\Downloads\Containastore\` if wanted later.
 
 ## ⚠️ Privacy policy removed — legal risk, needs a decision
 
