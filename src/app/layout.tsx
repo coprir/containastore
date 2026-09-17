@@ -4,6 +4,7 @@ import './globals.css';
 
 import { env } from '@/lib/env';
 import { defaults } from '@/lib/seo';
+import { noFlashThemeScript } from '@/lib/noFlashThemeScript';
 
 const archivo = Archivo({
   subsets: ['latin'],
@@ -44,7 +45,11 @@ export default function RootLayout({
     <html
       lang="en-GB"
       className={`${archivo.variable} ${plexSans.variable} ${plexMono.variable}`}
+      suppressHydrationWarning
     >
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: noFlashThemeScript }} />
+      </head>
       <body>{children}</body>
     </html>
   );

@@ -2,23 +2,44 @@
 @tailwind components;
 @tailwind utilities;
 
-/* ---- Design tokens: greyscale galvanised steel --------------------------- */
+/* ---- Design tokens: galvanised steel + HUD teal --------------------------
+   Dark is the default brand mode; a light mode is available via the
+   day/night toggle in the header (`data-theme="light"` on <html>). Every
+   component reads these as Tailwind colors (see tailwind.config.ts) — a
+   redefinition here reaches the entire site, no component changes needed. */
 :root {
-  --ink: #1c1f22; /* page ground */
-  --steel: #23272b; /* alternating bands */
-  --panel: #2a2f34; /* cards */
-  --panel-2: #333940; /* card headers, container-door strips */
-  --line: #3e454c; /* decorative borders */
-  --line-strong: #727c84; /* form fields and buttons — WCAG 1.4.11 needs 3:1 */
-  --paper: #f1f3f4; /* primary text */
-  --muted: #a4acb3; /* secondary text */
-  --accent: #c6d0d8; /* brushed metal — rules, markers, arrows */
-  --accent-strong: #edf1f3; /* primary buttons, dark text on top */
-  --focus: #f0c46a; /* focus ring only */
-  --warn: #e08a7a; /* form errors only */
+  --ink: #0b0f14; /* page ground */
+  --steel: #10151b; /* alternating bands */
+  --panel: #151c24; /* cards */
+  --panel-2: #1c2530; /* card headers, container-door strips */
+  --line: #2b3744; /* decorative borders */
+  --line-strong: #3f5164; /* form fields and buttons — WCAG 1.4.11 needs 3:1 */
+  --paper: #eaf2f7; /* primary text */
+  --muted: #8fa3b3; /* secondary text */
+  --accent: #33e6c4; /* HUD teal — rules, markers, arrows, glow */
+  --accent-strong: #e9fffa; /* primary buttons (paired with --ink text) */
+  --focus: #ffc857; /* focus ring only */
+  --warn: #ff7a68; /* form errors only */
 
   --maxw: 1180px;
   color-scheme: dark;
+}
+
+:root[data-theme='light'] {
+  --ink: #f3f6f9;
+  --steel: #e7ecf1;
+  --panel: #ffffff;
+  --panel-2: #e9eef3;
+  --line: #d7dee5;
+  --line-strong: #8fa2b1;
+  --paper: #101820;
+  --muted: #52697a;
+  --accent: #0ea893;
+  --accent-strong: #0b2530;
+  --focus: #c2790e;
+  --warn: #d14343;
+
+  color-scheme: light;
 }
 
 /* ---- Base -------------------------------------------------------------- */
@@ -39,6 +60,7 @@ body {
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
+  transition: background-color 0.25s ease, color 0.25s ease;
 }
 
 h1,
@@ -107,26 +129,43 @@ kbd {
 }
 
 .corrugated-strong {
-  background-image: repeating-linear-gradient(
-    90deg,
-    rgba(255, 255, 255, 0.06) 0px,
-    rgba(255, 255, 255, 0.06) 3px,
-    rgba(0, 0, 0, 0.28) 8px,
-    rgba(0, 0, 0, 0.28) 30px,
-    rgba(255, 255, 255, 0.06) 35px,
-    rgba(255, 255, 255, 0.06) 38px,
-    transparent 38px,
-    transparent 52px
-  );
-  background-size: 52px 100%;
+  background-image: linear-gradient(
+      90deg,
+      transparent 0%,
+      var(--accent) 50%,
+      transparent 100%
+    ),
+    repeating-linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.06) 0px,
+      rgba(255, 255, 255, 0.06) 3px,
+      rgba(0, 0, 0, 0.28) 8px,
+      rgba(0, 0, 0, 0.28) 30px,
+      rgba(255, 255, 255, 0.06) 35px,
+      rgba(255, 255, 255, 0.06) 38px,
+      transparent 38px,
+      transparent 52px
+    );
+  background-size: 100% 100%, 52px 100%;
+  opacity: 0.9;
 }
 
-/* Stencilled ISO-style size code */
+/* Stencilled ISO-style size code — a faint HUD glow, not just flat text */
 .stencil {
   font-family: var(--font-plex-mono), ui-monospace, monospace;
   letter-spacing: 0.14em;
   font-weight: 600;
   text-transform: uppercase;
+}
+
+.stencil-glow {
+  text-shadow: 0 0 12px color-mix(in srgb, var(--accent) 55%, transparent);
+}
+
+/* Soft accent glow for primary CTAs and highlighted surfaces */
+.glow-accent {
+  box-shadow: 0 0 0 1px color-mix(in srgb, var(--accent) 45%, transparent),
+    0 0 22px -6px var(--accent);
 }
 
 /* ---- Hero staggered reveal (the ONE load animation) -------------------- */
@@ -199,4 +238,40 @@ kbd {
   font-family: var(--font-plex-mono), ui-monospace, monospace;
   font-size: 0.85em;
   overflow-wrap: anywhere;
+}
+
+/* ---- Theme toggle switch ------------------------------------------------ */
+/* display is deliberately NOT set here — it's applied per-usage via Tailwind's
+   inline-flex/hidden utilities so responsive visibility (hidden sm:inline-flex)
+   isn't fought by a plain CSS rule of equal specificity. */
+.theme-toggle {
+  position: relative;
+  align-items: center;
+  width: 52px;
+  height: 28px;
+  border-radius: 999px;
+  border: 1px solid var(--line-strong);
+  background: var(--panel-2);
+  cursor: pointer;
+  padding: 2px;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+.theme-toggle:hover {
+  border-color: var(--accent);
+}
+.theme-toggle__thumb {
+  width: 22px;
+  height: 22px;
+  border-radius: 999px;
+  background: var(--accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--ink);
+  transform: translateX(0);
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 0 10px -1px var(--accent);
+}
+:root[data-theme='light'] .theme-toggle__thumb {
+  transform: translateX(24px);
 }
