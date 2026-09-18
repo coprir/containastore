@@ -11,7 +11,7 @@ export interface PlateCell {
 export function DataPlate({ cells }: { cells: PlateCell[] }) {
   return (
     <dl
-      className="grid grid-cols-2 overflow-hidden rounded border border-line-strong bg-panel/80 sm:grid-cols-4"
+      className="grid grid-cols-2 overflow-hidden rounded border border-line-strong bg-[color-mix(in_srgb,var(--panel)_80%,transparent)] sm:grid-cols-4"
       aria-label="Key facts"
     >
       {cells.map((cell, i) => (

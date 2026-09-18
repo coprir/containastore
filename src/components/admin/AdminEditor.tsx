@@ -313,7 +313,7 @@ export function AdminEditor({ base, initialOverrides }: Props) {
       </section>
 
       {/* ---- Save ------------------------------------------------- */}
-      <div className="sticky bottom-0 -mx-4 border-t border-line bg-steel/95 px-4 py-4 backdrop-blur">
+      <div className="sticky bottom-0 -mx-4 border-t border-line bg-[color-mix(in_srgb,var(--steel)_95%,transparent)] px-4 py-4 backdrop-blur">
         <div className="flex flex-wrap items-center gap-4">
           <button
             type="button"

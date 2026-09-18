@@ -2,42 +2,45 @@
 @tailwind components;
 @tailwind utilities;
 
-/* ---- Design tokens: galvanised steel + HUD teal --------------------------
-   Dark is the default brand mode; a light mode is available via the
-   day/night toggle in the header (`data-theme="light"` on <html>). Every
-   component reads these as Tailwind colors (see tailwind.config.ts) — a
-   redefinition here reaches the entire site, no component changes needed. */
+/* ---- Design tokens: the yard after dark ----------------------------------
+   Tied to a real, specific thing about this business — the yard is watched
+   by security lighting all night — rather than a generic dark-mode-plus-neon
+   template look. Dark mode reads as dusk/night under sodium floodlights: a
+   deep indigo sky with a warm amber glow. Light mode is the same yard by day.
+   A day/night toggle in the header switches between them. Every component
+   reads these as Tailwind colors (see tailwind.config.ts) — a redefinition
+   here reaches the entire site, no component changes needed. */
 :root {
-  --ink: #0b0f14; /* page ground */
-  --steel: #10151b; /* alternating bands */
-  --panel: #151c24; /* cards */
-  --panel-2: #1c2530; /* card headers, container-door strips */
-  --line: #2b3744; /* decorative borders */
-  --line-strong: #3f5164; /* form fields and buttons — WCAG 1.4.11 needs 3:1 */
-  --paper: #eaf2f7; /* primary text */
-  --muted: #8fa3b3; /* secondary text */
-  --accent: #33e6c4; /* HUD teal — rules, markers, arrows, glow */
-  --accent-strong: #e9fffa; /* primary buttons (paired with --ink text) */
-  --focus: #ffc857; /* focus ring only */
-  --warn: #ff7a68; /* form errors only */
+  --ink: #0b1023; /* page ground — night sky over the yard */
+  --steel: #10162c; /* alternating bands */
+  --panel: #161d38; /* cards */
+  --panel-2: #1e2748; /* card headers, container-door strips */
+  --line: #2e3a63; /* decorative borders */
+  --line-strong: #47568c; /* form fields and buttons — WCAG 1.4.11 needs 3:1 */
+  --paper: #f3efe6; /* primary text — warm, like light spill from the lamps */
+  --muted: #9aa3c4; /* secondary text */
+  --accent: #ffa542; /* security-floodlight amber — rules, markers, glow */
+  --accent-strong: #ffebd1; /* primary buttons (paired with --ink text) */
+  --focus: #7dd8ff; /* focus ring only — kept distinct from the amber accent */
+  --warn: #ff6b5b; /* form errors only */
 
   --maxw: 1180px;
   color-scheme: dark;
 }
 
 :root[data-theme='light'] {
-  --ink: #f3f6f9;
-  --steel: #e7ecf1;
+  --ink: #eef1f8; /* page ground — the same yard in daylight */
+  --steel: #e2e7f2;
   --panel: #ffffff;
-  --panel-2: #e9eef3;
-  --line: #d7dee5;
-  --line-strong: #8fa2b1;
-  --paper: #101820;
-  --muted: #52697a;
-  --accent: #0ea893;
-  --accent-strong: #0b2530;
-  --focus: #c2790e;
-  --warn: #d14343;
+  --panel-2: #e8ecf6;
+  --line: #d3d9e8;
+  --line-strong: #7c86ac;
+  --paper: #12172b;
+  --muted: #565f82;
+  --accent: #c9720c; /* darkened amber for AA contrast on light panels */
+  --accent-strong: #12172b;
+  --focus: #0e7fae;
+  --warn: #c23b2e;
 
   color-scheme: light;
 }
@@ -238,6 +241,16 @@ kbd {
   font-family: var(--font-plex-mono), ui-monospace, monospace;
   font-size: 0.85em;
   overflow-wrap: anywhere;
+}
+
+/* ---- Header frosted surface -----------------------------------------------
+   Tailwind's bg-ink/95 opacity syntax needs an RGB-triplet custom property to
+   slice alpha from; ours are plain hex strings, so it silently produced a
+   fully transparent background. color-mix() works with hex vars directly. */
+.header-surface {
+  background: color-mix(in srgb, var(--ink) 95%, transparent);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
 
 /* ---- Theme toggle switch ------------------------------------------------ */

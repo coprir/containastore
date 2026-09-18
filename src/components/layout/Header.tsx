@@ -24,7 +24,7 @@ export function Header({ site }: { site: SiteContent }) {
     href === '/' ? pathname === '/' : pathname.startsWith(href);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-line bg-ink/95 backdrop-blur">
+    <header className="header-surface sticky top-0 z-50 border-b border-line">
       <div className="corrugated-strong h-1 w-full opacity-70" aria-hidden="true" />
 
       {/* Utility row — nav, phone, toggle, CTA. Kept slim on purpose so the

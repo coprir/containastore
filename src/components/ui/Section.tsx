@@ -30,7 +30,7 @@ export function Section({
       id={id}
       aria-labelledby={ariaLabelledby}
       aria-label={ariaLabel}
-      className={`${toneClass[tone]} border-t border-line/60 py-14 md:py-20 ${className}`}
+      className={`${toneClass[tone]} border-t border-[color-mix(in_srgb,var(--line)_60%,transparent)] py-14 md:py-20 ${className}`}
     >
       <Container>{children}</Container>
     </section>
