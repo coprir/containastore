@@ -1,6 +1,13 @@
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import { ButtonLink } from '@/components/ui/Button';
 import { LogoMark } from '@/components/ui/Logo';
+
+export const metadata: Metadata = {
+  title: 'Page not found | Containastore',
+  description: 'That page does not exist, or it has moved.',
+  robots: { index: false, follow: true },
+};
 
 export default function NotFound() {
   return (

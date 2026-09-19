@@ -15,17 +15,20 @@ export default function OpengraphImage() {
           display: 'flex',
           flexDirection: 'column',
           justifyContent: 'space-between',
-          background: '#1C1F22',
-          color: '#F1F3F4',
+          // Hardcoded, not CSS variables — the edge image renderer has no DOM/
+          // cascade to read them from. Keep in sync with globals.css by hand:
+          // --ink, --paper, --accent, --muted (dark theme values).
+          background: '#0B1023',
+          color: '#F3EFE6',
           padding: '72px',
           fontFamily: 'sans-serif',
         }}
       >
         <div style={{ display: 'flex', flexDirection: 'column' }}>
-          <div style={{ fontSize: 30, letterSpacing: 8, color: '#C6D0D8' }}>
+          <div style={{ fontSize: 30, letterSpacing: 8, color: '#FFA542' }}>
             CONTAINASTORE
           </div>
-          <div style={{ fontSize: 20, letterSpacing: 6, color: '#A4ACB3', marginTop: 6 }}>
+          <div style={{ fontSize: 20, letterSpacing: 6, color: '#9AA3C4', marginTop: 6 }}>
             SELF ACCESS STORAGE
           </div>
         </div>
@@ -34,12 +37,12 @@ export default function OpengraphImage() {
           <div style={{ fontSize: 68, fontWeight: 800, lineHeight: 1.1, maxWidth: 900 }}>
             Your local self access storage
           </div>
-          <div style={{ fontSize: 30, color: '#A4ACB3', marginTop: 20 }}>
+          <div style={{ fontSize: 30, color: '#9AA3C4', marginTop: 20 }}>
             Secure container storage near Inkberrow, Worcestershire · from £80 / month
           </div>
         </div>
 
-        <div style={{ display: 'flex', gap: 40, fontSize: 26, color: '#C6D0D8' }}>
+        <div style={{ display: 'flex', gap: 40, fontSize: 26, color: '#FFA542' }}>
           <span>24 hour access</span>
           <span>·</span>
           <span>1 month minimum</span>
