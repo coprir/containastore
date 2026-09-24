@@ -116,7 +116,7 @@ export function EnquiryForm({
       >
         <h3 className="font-heading text-lg font-bold text-paper">Thank you — that is on its way</h3>
         <p className="mt-2 text-muted">
-          We will get back to you during enquiry hours. Replies occasionally land
+          We will get back to you during our operating hours. Replies occasionally land
           in spam or junk folders, so please check there if you have not heard
           from us. You can also call {phoneDisplay}.
         </p>

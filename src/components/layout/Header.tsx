@@ -10,7 +10,6 @@ import { ThemeToggle } from '@/components/ThemeToggle';
 const nav = [
   { href: '/', label: 'Home' },
   { href: '/storage', label: 'Our storage' },
-  { href: '/conversions', label: 'Conversions' },
   { href: '/about', label: 'About us' },
   { href: '/faq', label: 'FAQ' },
   { href: '/hints-and-tips', label: 'Hints & tips' },

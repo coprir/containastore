@@ -19,7 +19,8 @@ const legacyPairs = [
   ['/storage-containershtml', '/storage'],
   ['/contact-ushtml', '/contact'],
   ['/hints-and-tipshtml', '/hints-and-tips'],
-  ['/conversions-condensationhtml', '/conversions'],
+  ['/conversions', '/storage'],
+  ['/conversions-condensationhtml', '/storage'],
 
   // Size-page legacy slugs
   ['/10ft-storage-container', '/storage/10ft-storage'],
@@ -39,9 +40,9 @@ const legacyPairs = [
   ['/contact-us', '/contact'],
   ['/contact-us.html', '/contact'],
   ['/contact.html', '/contact'],
-  ['/conversions-condensation', '/conversions'],
-  ['/conversions-condensation.html', '/conversions'],
-  ['/conversions.html', '/conversions'],
+  ['/conversions-condensation', '/storage'],
+  ['/conversions-condensation.html', '/storage'],
+  ['/conversions.html', '/storage'],
   ['/hints-and-tips.html', '/hints-and-tips'],
 
   // Size pages: legacy container slugs + .html forms

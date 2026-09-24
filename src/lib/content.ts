@@ -21,7 +21,6 @@ import {
   type StorageUnit,
 } from '@content/units';
 import { faqs as baseFaqs, type Faq } from '@content/faq';
-import { conversionServices, conversionCopy } from '@content/conversions';
 import { homeCopy as baseHomeCopy, aboutCopy, hintsAndTips } from '@content/pages';
 import { privacyPolicy, cookiePolicy } from '@content/legal';
 
@@ -114,8 +113,6 @@ export {
   commonSpec,
   aboutCopy,
   hintsAndTips,
-  conversionServices,
-  conversionCopy,
   privacyPolicy,
   cookiePolicy,
   contactEmail,

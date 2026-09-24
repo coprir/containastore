@@ -44,7 +44,6 @@ export default async function HomePage() {
           ...units.map((u) => ({ value: u.size, label: `${u.size} unit` })),
           ...enquiryOnlyUnits.map((u) => ({ value: u.size, label: u.size })),
           { value: 'not-sure', label: 'Not sure yet' },
-          { value: 'conversion', label: 'Conversion / lock box enquiry' },
         ]}
       />
 
@@ -89,23 +88,6 @@ export default async function HomePage() {
             </li>
           ))}
         </ol>
-      </Section>
-
-      {/* Conversions teaser */}
-      <Section tone="ink" ariaLabelledby="conv-h">
-        <div className="rounded border border-line bg-panel p-8 md:flex md:items-center md:justify-between md:gap-8">
-          <div className="max-w-2xl">
-            <h2 id="conv-h" className="font-heading text-2xl font-bold text-paper">
-              {home.conversionsTeaser.heading}
-            </h2>
-            <p className="mt-3 text-muted">{home.conversionsTeaser.body}</p>
-          </div>
-          <div className="mt-5 shrink-0 md:mt-0">
-            <ButtonLink href="/conversions" variant="secondary">
-              Lock-box services
-            </ButtonLink>
-          </div>
-        </div>
       </Section>
 
       {/* FAQ preview */}

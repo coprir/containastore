@@ -19,7 +19,7 @@ export const faqs: Faq[] = [
     id: 'where-are-you-based',
     question: 'Where are you based?',
     answer:
-      'We are on secure premises near Inkberrow, easily accessible from M40 Junction 6 and the A422. Initial site visits are by appointment during our enquiry hours, 9am to 6pm — get in touch if that is not convenient and we will do our best to help. Once you are in stores, access is 24 hours a day.',
+      'We are on secure premises near Inkberrow, easily accessible from M40 Junction 6 and the A422. Initial site visits are by appointment during our operating hours, 6:30am to 9pm — get in touch if that is not convenient and we will do our best to help. Our operating hours are 6:30am to 9pm, but access to your own container is 24 hours a day.',
   },
   {
     id: 'what-size-containers',

@@ -25,7 +25,6 @@ export function Footer({ site }: { site: SiteContent }) {
             <p className="mb-2 font-semibold text-on-band">Pages</p>
             <ul className="space-y-1 text-on-band/85">
               <li><Link href="/storage" className="hover:text-on-band">Storage &amp; prices</Link></li>
-              <li><Link href="/conversions" className="hover:text-on-band">Conversions</Link></li>
               <li><Link href="/about" className="hover:text-on-band">About</Link></li>
               <li><Link href="/faq" className="hover:text-on-band">FAQ</Link></li>
               <li><Link href="/hints-and-tips" className="hover:text-on-band">Hints &amp; tips</Link></li>
@@ -57,7 +56,7 @@ export function Footer({ site }: { site: SiteContent }) {
                 {email}
               </a>
             </address>
-            <p className="mt-3 text-on-band/85">Enquiries {site.hours.enquiries}</p>
+            <p className="mt-3 text-on-band/85">Operating hours {site.hours.enquiries}</p>
             <div className="mt-3 flex gap-3">
               <a href={site.social.facebook} className="hover:text-on-band" rel="noopener noreferrer" target="_blank">
                 Facebook

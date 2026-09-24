@@ -51,7 +51,7 @@ export default async function FaqPage() {
       <Section tone="steel">
         <div className="rounded border border-line bg-panel p-8 md:flex md:items-center md:justify-between md:gap-6">
           <p className="max-w-xl text-muted">
-            Still not sure? We are happy to talk it through — enquiries {site.hours.enquiries}.
+            Still not sure? We are happy to talk it through — we are open {site.hours.enquiries}.
           </p>
           <div className="mt-4 flex flex-wrap gap-3 md:mt-0">
             <ButtonLink href="/contact" variant="primary">

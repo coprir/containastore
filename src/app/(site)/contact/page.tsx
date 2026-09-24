@@ -15,7 +15,7 @@ export const revalidate = 300;
 export const metadata: Metadata = pageMeta({
   title: 'Contact & enquiries',
   description:
-    'Contact Containastore Self Access Storage near Inkberrow, Worcestershire. Call 07851 435867 or send an enquiry. Enquiries 9am to 6pm; site visits by appointment.',
+    'Contact Containastore Self Access Storage near Inkberrow, Worcestershire. Call 07851 435867 or send an enquiry. Operating hours 6:30am to 9pm; site visits by appointment.',
   path: '/contact',
 });
 
@@ -34,10 +34,6 @@ export default async function ContactPage() {
     ...units.map((u) => ({ value: u.size, label: `${u.size} unit` })),
     ...enquiryOnlyUnits.map((u) => ({ value: u.size, label: u.size })),
     { value: 'not-sure', label: 'Not sure yet' },
-    {
-      value: 'conversion',
-      label: 'Conversion / lock box enquiry',
-    },
   ];
 
   return (
@@ -59,7 +55,7 @@ export default async function ContactPage() {
         <SectionHeading
           eyebrow="Contact"
           title="Get in touch"
-          lead="Tell us roughly what you need to store and we will help you pick the right size, or answer any questions about conversions and lock boxes."
+          lead="Tell us roughly what you need to store and we will help you pick the right size."
         />
 
         <div className="grid gap-10 lg:grid-cols-[1.3fr_1fr]">
@@ -95,7 +91,7 @@ export default async function ContactPage() {
               </p>
               <dl className="mt-4 space-y-2 text-sm text-muted">
                 <div>
-                  <dt className="inline font-semibold text-paper">Enquiries: </dt>
+                  <dt className="inline font-semibold text-paper">Operating hours: </dt>
                   <dd className="inline">{site.hours.enquiries}</dd>
                 </div>
                 <div>

@@ -43,10 +43,6 @@ export const homeCopy = {
       body: 'Collect a heavy duty lock (free against a £30 refundable deposit), load your container, and lock up. From then on you have 24 hour access.',
     },
   ],
-  conversionsTeaser: {
-    heading: 'Container conversions',
-    body: 'We also weld on lock boxes — for our own yard and for other storage businesses and container owners.',
-  },
   finalCta: {
     heading: 'Ready to talk it through?',
     body: 'Tell us roughly what you need to store and we will help you pick the right size.',

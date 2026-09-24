@@ -141,7 +141,7 @@ export default async function AboutPage() {
             </span>
             <span className="mt-3 block">{site.directions}.</span>
             <span className="mt-3 block">
-              Enquiries {site.hours.enquiries}. Site visits: {site.hours.siteVisits.toLowerCase()}.
+              Operating hours {site.hours.enquiries}. Site visits: {site.hours.siteVisits.toLowerCase()}.
               Access is {site.hours.access}.
             </span>
           </address>

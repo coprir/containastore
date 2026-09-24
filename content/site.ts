@@ -56,8 +56,8 @@ export const site: SiteContent = {
     country: 'United Kingdom',
   },
   hours: {
-    enquiries: '9am – 6pm',
-    access: '24 hours a day once a container is allocated',
+    enquiries: '6:30am – 9pm',
+    access: '24 hours a day to your container',
     siteVisits: 'By appointment during enquiry hours',
   },
   directions: 'Easily accessible from M40 Junction 6 and the A422',

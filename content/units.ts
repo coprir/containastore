@@ -3,6 +3,7 @@
  *  - 20ft price is £120/month (client-confirmed 11 Sept 2026, superseding the
  *    original launch-build figure of £115)
  *  - 40ft price is £180/month (client-confirmed 11 Sept 2026, was £170)
+ *  - 10ft is £90 and 12ft is £95 (client design deck, 24 Sept 2026)
  *  - "From" price across the site is £80 (the cheapest confirmed unit)
  *  - Every container is 8ft 6in high (the FAQ's "8ft high" is not used)
  *
@@ -67,7 +68,7 @@ export const units: StorageUnit[] = [
     slug: '10ft-storage',
     size: '10ft',
     name: '10ft storage unit',
-    pricePerMonth: 85,
+    pricePerMonth: 90,
     floorArea: '80 sq ft',
     doors: 'Single steel door',
     code: '10FT · 80 SQ FT',
@@ -98,7 +99,7 @@ export const units: StorageUnit[] = [
     slug: '12ft-storage',
     size: '12ft',
     name: '12ft storage unit',
-    pricePerMonth: 100,
+    pricePerMonth: 95,
     floorArea: '96 sq ft',
     doors: 'Single steel door',
     code: '12FT · 96 SQ FT',
