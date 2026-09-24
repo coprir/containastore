@@ -2,7 +2,7 @@ import Link from 'next/link';
 import type { Metadata } from 'next';
 
 import { pageMeta } from '@/lib/seo';
-import { getSite, getUnits, getFaqs, getHomeCopy, getFromPrice, enquiryOnlyUnits } from '@/lib/content';
+import { contactEmail, getSite, getUnits, getFaqs, getHomeCopy, getFromPrice, enquiryOnlyUnits } from '@/lib/content';
 import { Hero } from '@/components/home/Hero';
 import { Section, SectionHeading } from '@/components/ui/Section';
 import { PricingGrid } from '@/components/PricingGrid';
@@ -36,9 +36,16 @@ export default async function HomePage() {
 
       <Hero
         site={site}
-        fromPrice={fromPrice}
         heading={home.hero.heading}
         sub={home.hero.sub}
+        areas={home.hero.areas}
+        email={contactEmail()}
+        sizeOptions={[
+          ...units.map((u) => ({ value: u.size, label: `${u.size} unit` })),
+          ...enquiryOnlyUnits.map((u) => ({ value: u.size, label: u.size })),
+          { value: 'not-sure', label: 'Not sure yet' },
+          { value: 'conversion', label: 'Conversion / lock box enquiry' },
+        ]}
       />
 
       {/* Three pillars */}
@@ -95,7 +102,7 @@ export default async function HomePage() {
           </div>
           <div className="mt-5 shrink-0 md:mt-0">
             <ButtonLink href="/conversions" variant="secondary">
-              Conversions &amp; spray prices
+              Lock-box services
             </ButtonLink>
           </div>
         </div>

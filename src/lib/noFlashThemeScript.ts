@@ -7,7 +7,7 @@ export const noFlashThemeScript = `
 (function () {
   try {
     var t = localStorage.getItem('containastore_theme');
-    if (t === 'light') document.documentElement.setAttribute('data-theme', 'light');
+    if (t === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
   } catch (e) {}
 })();
 `;

@@ -1,7 +1,8 @@
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { SkipLink } from '@/components/layout/SkipLink';
-import { getSite } from '@/lib/content';
+import { getSite, contactEmail } from '@/lib/content';
+import { FeatureBand } from '@/components/layout/FeatureBand';
 import { localBusinessSchema } from '@/lib/schema';
 
 export default async function SiteLayout({
@@ -20,8 +21,9 @@ export default async function SiteLayout({
         }}
       />
       <SkipLink />
-      <Header site={site} />
+      <Header site={site} email={contactEmail()} />
       <main id="main">{children}</main>
+      <FeatureBand />
       <Footer site={site} />
     </>
   );

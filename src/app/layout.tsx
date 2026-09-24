@@ -44,6 +44,7 @@ export default function RootLayout({
   return (
     <html
       lang="en-GB"
+      data-theme="light"
       className={`${archivo.variable} ${plexSans.variable} ${plexMono.variable}`}
       suppressHydrationWarning
     >

@@ -8,6 +8,8 @@ export const homeCopy = {
     heading: 'Your local self access storage',
     // "from £80" — see DISCREPANCIES.md (hero says £80, meta says £75; £80 is the
     // cheapest confirmed unit, so £80 is used everywhere).
+    // Service-area sentence supplied by the client in their design deck.
+    areas: 'We are able to help with your removal and storage needs in Inkberrow, Worcester, Astwood Bank, Studley, Alvechurch, Bromsgrove, Droitwich, Henley, Evesham, and surrounding areas.',
     sub: 'Secure shipping container storage near Inkberrow, Worcestershire. Drive to your door, 24 hour access once you are allocated a container, and a simple monthly rate with no notice period.',
   },
   pillars: [

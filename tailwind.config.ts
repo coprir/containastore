@@ -20,6 +20,9 @@ const config: Config = {
         'accent-strong': 'var(--accent-strong)',
         focus: 'var(--focus)',
         warn: 'var(--warn)',
+        band: 'var(--band)',
+        'on-band': 'var(--on-band)',
+        'band-accent': 'var(--band-accent)',
       },
       fontFamily: {
         heading: ['var(--font-archivo)', 'system-ui', 'sans-serif'],

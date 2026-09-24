@@ -180,7 +180,7 @@ export function EnquiryForm({
             autoComplete="name"
             aria-invalid={Boolean(errors.name)}
             aria-describedby={errors.name ? 'err-name' : undefined}
-            className="w-full rounded border border-line-strong bg-ink px-3 py-2.5 text-paper"
+            className="w-full rounded border border-line-strong bg-white px-3 py-2.5 text-[#23262c]"
           />
           <FieldError id="err-name" message={errors.name} />
         </div>
@@ -197,7 +197,7 @@ export function EnquiryForm({
             autoComplete="email"
             aria-invalid={Boolean(errors.email)}
             aria-describedby={errors.email ? 'err-email' : undefined}
-            className="w-full rounded border border-line-strong bg-ink px-3 py-2.5 text-paper"
+            className="w-full rounded border border-line-strong bg-white px-3 py-2.5 text-[#23262c]"
           />
           <FieldError id="err-email" message={errors.email} />
         </div>
@@ -213,7 +213,7 @@ export function EnquiryForm({
             autoComplete="tel"
             aria-invalid={Boolean(errors.phone)}
             aria-describedby={errors.phone ? 'err-phone' : undefined}
-            className="w-full rounded border border-line-strong bg-ink px-3 py-2.5 text-paper"
+            className="w-full rounded border border-line-strong bg-white px-3 py-2.5 text-[#23262c]"
           />
           <FieldError id="err-phone" message={errors.phone} />
         </div>
@@ -226,7 +226,7 @@ export function EnquiryForm({
             id="size"
             name="size"
             defaultValue=""
-            className="w-full rounded border border-line-strong bg-ink px-3 py-2.5 text-paper"
+            className="w-full rounded border border-line-strong bg-white px-3 py-2.5 text-[#23262c]"
           >
             <option value="">Select a size</option>
             {sizeOptions.map((opt) => (
@@ -246,7 +246,7 @@ export function EnquiryForm({
             id="startDate"
             name="startDate"
             type="date"
-            className="w-full rounded border border-line-strong bg-ink px-3 py-2.5 text-paper sm:max-w-xs"
+            className="w-full rounded border border-line-strong bg-white px-3 py-2.5 text-[#23262c] sm:max-w-xs"
           />
           <FieldError id="err-startDate" message={errors.startDate} />
         </div>
@@ -263,7 +263,7 @@ export function EnquiryForm({
           rows={5}
           aria-invalid={Boolean(errors.message)}
           aria-describedby={errors.message ? 'err-message' : undefined}
-          className="w-full rounded border border-line-strong bg-ink px-3 py-2.5 text-paper"
+          className="w-full rounded border border-line-strong bg-white px-3 py-2.5 text-[#23262c]"
         />
         <FieldError id="err-message" message={errors.message} />
       </div>
